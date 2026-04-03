@@ -57,10 +57,9 @@
 ## 📊 GitHub Stats
 
 <div align="center">
-  <a href="https://github.com/Er-Sumit-Kumar">
-    <img src="https://github-readme-stats.vercel.app/api?username=Er-Sumit-Kumar&show_icons=true&theme=tokyonight&hide_border=true" alt="Sumit's GitHub Stats" />
-  </a>
-  <a href="https://github.com/Er-Sumit-Kumar">
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Er-Sumit-Kumar&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages" />
-  </a>
+  
+[![Sumit's GitHub Stats](https://github-readme-stats.vercel.app/api?username=Er-Sumit-Kumar&show_icons=true&theme=tokyonight&hide_border=true)](https://github.com/Er-Sumit-Kumar)
+
+[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Er-Sumit-Kumar&layout=compact&theme=tokyonight&hide_border=true)](https://github.com/Er-Sumit-Kumar)
+
 </div>
