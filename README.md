@@ -9,10 +9,10 @@
 ---
 
 ## 🧑‍💻 About Me
-- 💻 **Full Stack Developer** managing and hosting multiple live platforms.
-- 🤖 **Interests:** AI/ML, cybersecurity, IoT, and end-to-end system development.
-- ⚡ **Currently Working On:** Developing professional web apps, Android authentication systems, and custom firmware for hardware projects. 
-- 🎯 **Goal:** Building impactful tech under my company banner, The27LINKS.
+- 🎓 **B.Tech CSE (AI & ML) student actively seeking full-time Software Engineering roles or internships.**
+- 💻 **Full Stack Developer** managing and hosting multiple live platforms, including hands-on experience with server management (e.g., Raspberry Pi hosting).
+- ⚡ **Current Focus:** Developing scalable backends, integrating AI workflows, and building clean, user-centric interfaces.
+- 🎯 **Personal Initiative:** Building impactful tech, hardware, and web solutions under my open-source and project umbrella, **The27LINKS**.
 
 ---
 
@@ -40,34 +40,42 @@
 
 ---
 
-## 🚀 Projects
+## 🚀 Featured Projects
 
-### 🔹 Software & Full Stack Projects
-- 🌙 **Midnight** – A dynamic social media platform.
-- 🤖 **DK2B** – An AI-driven brand agent system for analyzing project communications and generating BRDs.
-- 🔐 **Linker** – Web & Android authentication system (similar to Google Authenticator), powered by The27LINKS.
+### 🔹 Software & Web Development
+- 🤖 **DK2B (AI Brand Agent)** – An AI-driven brand agent system for analyzing project communications and generating Business Requirement Documents (BRDs).
+  - *Tech Stack:* `Python`, `Prompt Engineering`, `API Integration`
+  - 🔗 [Repository](#) | [Live Demo](#)
 
-### 🔹 Hardware & IoT
-- 🤖 **Mini Humanoid Robot** – Built using Arduino Mega, HC-06, and servo motors (Full documentation on Google Drive).
+- 🔐 **Linker (Auth System)** – Cross-platform web & Android authentication system (similar to Google Authenticator), powered by The27LINKS.
+  - *Tech Stack:* `JavaScript`, `Android`, `SQL`
+  - 🔗 [Repository](#) | [Live App](#)
+
+- 🌙 **Midnight** – A dynamic, responsive social media platform.
+  - *Tech Stack:* `HTML5`, `CSS3`, `JavaScript`
+  - 🔗 [Repository](#) | [Live Demo](#)
+
+### 🔹 Hardware, IoT & Cybersecurity
+- 🤖 **Mini Humanoid Robot** – Built using Arduino Mega, HC-06, and servo motors.
+  - *Tech Stack:* `C++`, `Arduino`, `Hardware Integration`
+  - 🔗 [Documentation (Google Drive)](#)
+
 - ⌨️ **ESP32 Custom Device** – A mini keypad penetration testing device running custom firmware/OS with mobile-like functionality (e.g., calling).
-- ⚡ **Experimental IoT** – Bridging the gap between physical hardware and web integration.
+  - *Tech Stack:* `C/C++`, `Custom Firmware`, `Network Tools`
+  - 🔗 [Repository](#)
+
+- ⚡ **Experimental IoT** – Bridging the gap between physical hardware and web integration, including hosting live URLs directly from embedded hardware.
 
 ---
 
 <h3 align="center">📫 Connect With Me</h3>
 
 <p align="center">
-  <a href="#" target="_blank">
+  <a href="YOUR_LINKEDIN_URL" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
-  <a href="#" target="_blank">
+  <a href="YOUR_X_TWITTER_URL" target="_blank">
     <img src="https://img.shields.io/badge/X_%28Twitter%29-000000?style=for-the-badge&logo=x&logoColor=white" alt="X/Twitter" />
-  </a>
-  <a href="#" target="_blank">
-    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" />
-  </a>
-  <a href="#" target="_blank">
-    <img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" alt="Facebook" />
   </a>
   <a href="mailto:your.email@example.com" target="_blank">
     <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
