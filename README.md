@@ -74,14 +74,27 @@
   <a href="https://www.linkedin.com/in/sumit-kumar-664318232?utm_source=share_via&utm_content=profile" target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" width="32" />
   </a>
-  <a href="https://x.com/The27links" target="_blank">
- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/X_logo_2023.svg/600px-X_logo_2023.svg.png" alt="X/Twitter" width="32" />
+  
+  &nbsp;&nbsp; <a href="https://x.com/The27links" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/X_logo_2023.svg/600px-X_logo_2023.svg.png" alt="X/Twitter" width="32" />
   </a>
+
+  &nbsp;&nbsp;
+  
+  <a href="YOUR_INSTAGRAM_LINK_HERE" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/600px-Instagram_logo_2016.svg.png" alt="Instagram" width="32" />
+  </a>
+
+  &nbsp;&nbsp;
+  
   <a href="mailto:sumittkumarr1729@gmail.com" target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/600px-Gmail_icon_%282020%29.svg.png" alt="Email" width="32" />
   </a>
-    <a href="https://the27links.in" target="_blank">
-    <img src="https://raw.githubusercontent.com/The27LINKS/Data/refs/heads/main/Images/PNG/the27links.png" alt="The27LINKS" height="28"/>
+
+  &nbsp;&nbsp;
+  
+  <a href="https://the27links.in" target="_blank">
+    <img src="https://raw.githubusercontent.com/The27LINKS/Data/refs/heads/main/Images/PNG/the27links.png" alt="The27LINKS" width="32" />
   </a>
 </p>
 
