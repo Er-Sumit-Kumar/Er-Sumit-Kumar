@@ -75,10 +75,10 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" width="32" />
   </a>
   <a href="https://x.com/The27links" target="_blank">
-    <img src="https://img.shields.io/badge/X_%28Twitter%29-000000?style=for-the-badge&logo=x&logoColor=white" alt="X/Twitter" />
+ <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/X_logo_2023.svg/600px-X_logo_2023.svg.png" alt="X/Twitter" width="32" />
   </a>
   <a href="mailto:sumittkumarr1729@gmail.com" target="_blank">
-    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/600px-Gmail_icon_%282020%29.svg.png" alt="Email" width="32" />
   </a>
     <a href="https://the27links.in" target="_blank">
     <img src="https://raw.githubusercontent.com/The27LINKS/Data/refs/heads/main/Images/PNG/the27links.png" alt="The27LINKS" height="28"/>
