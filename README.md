@@ -74,7 +74,7 @@
   <a href="https://www.linkedin.com/in/sumit-kumar-664318232?utm_source=share_via&utm_content=profile" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
-  <a href="YOUR_X_TWITTER_URL" target="_blank">
+  <a href="https://x.com/The27links" target="_blank">
     <img src="https://img.shields.io/badge/X_%28Twitter%29-000000?style=for-the-badge&logo=x&logoColor=white" alt="X/Twitter" />
   </a>
   <a href="mailto:sumittkumarr1729@gmail.com" target="_blank">
