@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlashOS | Interactive System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #050505;
+            --text-main: #00ff41;
+            --text-dim: #008f11;
+            --highlight: #00e5ff;
+            --warning: #ff003c;
+            --font-term: 'Courier New', Courier, monospace;
+            --font-gui: 'Inter', sans-serif;
+            
+            /* GUI Theme */
+            --gui-bg: #09090b;
+            --gui-glass: rgba(255, 255, 255, 0.03);
+            --gui-border: rgba(255, 255, 255, 0.05);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: #050505; 
+            color: var(--text-main);
+            height: 100dvh; overflow: hidden;
+            transition: color 0.3s, background-color 0.8s ease-in-out;
+        }
+
+        /* --- 1. TERMINAL MODE STYLES --- */
+        #terminal-view {
+            display: flex; flex-direction: column; height: 100%; font-family: var(--font-term);
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); opacity: 1; transition: opacity 0.5s;
+            position: relative; z-index: 2;
+        }
+        
+        /* CRT Effect */
+        #terminal-view::before {
+            content: ""; display: block; position: absolute; top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+            z-index: 100; background-size: 100% 2px; pointer-events: none;
+        }
+
+        #terminal-output { flex-grow: 1; padding: 20px; overflow-y: auto; scroll-behavior: smooth; }
+        #bottom-dock { padding: 10px 20px 20px 20px; flex-shrink: 0; background: #050505; border-top: 1px solid rgba(0, 255, 65, 0.1); z-index: 10; }
+
+        .line { margin-bottom: 6px; line-height: 1.5; word-wrap: break-word; }
+        .prompt { color: var(--highlight); font-weight: bold; }
+        .user-input { color: #fff; }
+        .system { color: #888; }
+        .success { color: var(--text-main); font-weight: bold; }
+        .error { color: var(--warning); font-weight: bold; }
+        .pkg-load { color: #aaa; }
+
+        .ascii-art { white-space: pre; font-size: clamp(8px, 1.5vw, 16px); color: var(--highlight); margin-bottom: 15px; font-weight: bold; line-height: 1.2; }
+
+        .dossier-box { border: 1px solid var(--text-dim); padding: 15px; margin: 10px 0; background: rgba(255, 255, 255, 0.02); border-left: 4px solid var(--highlight); max-width: 650px; }
+        .dossier-header { color: var(--highlight); margin-bottom: 10px; border-bottom: 1px dashed var(--text-dim); padding-bottom: 5px; }
+        
+        .skill-row { display: flex; align-items: center; margin: 5px 0; flex-wrap: wrap; }
+        .skill-name { width: 140px; color: #fff; }
+        .bar-container { flex-grow: 1; min-width: 150px; max-width: 300px; background: #111; border: 1px solid var(--text-dim); height: 12px; }
+        .bar-fill { height: 100%; background: var(--text-main); box-shadow: 0 0 8px var(--text-main); }
+        .skill-pct { width: 45px; text-align: right; color: var(--highlight); }
+
+        .table-wrapper { width: 100%; max-width: 800px; overflow-x: auto; margin: 10px 0; }
+        .data-table { width: 100%; min-width: 400px; border-collapse: collapse; font-size: 0.9rem; }
+        .data-table th, .data-table td { padding: 8px; text-align: left; border-bottom: 1px solid var(--text-dim); }
+        .data-table th { color: var(--highlight); }
+        .tech-tag { background: rgba(255, 255, 255, 0.05); padding: 2px 6px; border: 1px solid var(--text-dim); font-size: 0.8rem; display: inline-block; margin-top: 2px;}
+
+        a.term-link { color: var(--highlight); text-decoration: none; border-bottom: 1px dashed var(--highlight); }
+        a.term-link:hover { background: var(--highlight); color: #000; }
+
+        #input-line { display: flex; align-items: center; margin-bottom: 5px; flex-wrap: wrap; }
+        #prompt-text { white-space: nowrap; font-size: 1.1rem; }
+        #cmd-input { background: transparent; border: none; color: #fff; font-family: var(--font-term); font-size: 1.1rem; flex-grow: 1; outline: none; margin-left: 10px; caret-color: var(--text-main); min-width: 150px; }
+        
+
+        /* --- 2. GRAPHICAL MODE STYLES --- */
+        #gui-view {
+            display: none; opacity: 0; height: 100%; overflow-y: auto; font-family: var(--font-gui);
+            color: #f8fafc; padding: 80px 5% 40px 5%;
+            transition: opacity 0.8s ease-out; position: absolute; top: 0; left: 0; width: 100%;
+        }
+
+        /* GUI Background grid */
+        #gui-view::before {
+            content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+            background-image: 
+                linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            mask-image: radial-gradient(circle at center, black, transparent 80%);
+            -webkit-mask-image: radial-gradient(circle at center, black, transparent 80%);
+        }
+
+        /* Top OS Menu Bar */
+        .os-menubar {
+            position: fixed; top: 0; left: 0; width: 100%; height: 40px; background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(10px); border-bottom: 1px solid var(--gui-border); z-index: 1000;
+            display: flex; justify-content: space-between; align-items: center; padding: 0 20px;
+            font-size: 0.85rem; color: #a1a1aa; font-family: var(--font-term);
+        }
+        .os-menubar .left { display: flex; gap: 20px; align-items: center; }
+        .os-menubar .right { display: flex; gap: 20px; align-items: center; }
+        .os-logo { color: var(--highlight); font-weight: bold; letter-spacing: 1px; }
+
+        .return-btn { background: rgba(255, 0, 60, 0.1); border: 1px solid rgba(255, 0, 60, 0.5); color: #ff003c; padding: 4px 12px; border-radius: 4px; cursor: pointer; font-family: var(--font-term); transition: 0.3s; font-size: 0.8rem; }
+        .return-btn:hover { background: #ff003c; color: #000; box-shadow: 0 0 10px #ff003c; }
+
+        .dashboard { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        
+        /* Glass OS Windows */
+        .glass-window { 
+            background: var(--gui-glass); backdrop-filter: blur(20px); 
+            border: 1px solid var(--gui-border); border-radius: 16px; padding: 30px; 
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s;
+            position: relative; overflow: hidden;
+            opacity: 0; transform: translateY(40px);
+        }
+        
+        .glass-window:hover { transform: translateY(-8px); border-color: rgba(0, 229, 255, 0.3); box-shadow: 0 15px 35px rgba(0,0,0,0.6); z-index: 10; }
+        
+        /* Window Header Dots */
+        .window-dots { display: flex; gap: 6px; margin-bottom: 20px; }
+        .dot { width: 10px; height: 10px; border-radius: 50%; }
+        .dot.r { background: #ff5f56; } .dot.y { background: #ffbd2e; } .dot.g { background: #27c93f; }
+
+        .glass-window h2 { font-size: 1.6rem; margin-bottom: 15px; color: #fff; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+        .glass-window p { color: #a1a1aa; line-height: 1.7; margin-bottom: 20px; font-size: 1.05rem; }
+        
+        .chip-container { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
+        .chip { padding: 6px 14px; background: rgba(0, 229, 255, 0.05); border: 1px solid rgba(0, 229, 255, 0.2); border-radius: 20px; font-size: 0.85rem; color: var(--highlight); font-family: var(--font-term); transition: 0.3s; }
+        .glass-window:hover .chip { background: rgba(0, 229, 255, 0.15); box-shadow: 0 0 10px rgba(0, 229, 255, 0.2); }
+
+        .project-item { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .project-item:last-child { border: none; margin-bottom: 0; padding-bottom: 0; }
+        .project-item h4 { font-size: 1.2rem; margin-bottom: 5px; color: #fff; display: flex; align-items: center; justify-content: space-between; }
+        .project-item h4 i { color: #9d00ff; }
+
+        /* Animation class for GUI reveal */
+        .animate-in { animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        @keyframes slideUpFade { to { opacity: 1; transform: translateY(0); } }
+
+        /* Scrollbars */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+
+        @media (max-width: 600px) {
+            #terminal-output { padding: 10px; }
+            .os-menubar { display: none; }
+            #gui-view { padding-top: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="terminal-view">
+        <div id="terminal-output"></div>
+
+        <div id="bottom-dock">
+            <div id="input-line">
+                <span class="prompt" id="prompt-text">guest@flashOS:~$</span>
+                <input type="text" id="cmd-input" autocomplete="off" spellcheck="false" autofocus placeholder="Enter a number (1-6)...">
+            </div>
+        </div>
+    </div>
+
+    <div id="gui-view">
+        <div class="os-menubar">
+            <div class="left">
+                <span class="os-logo"><i class="fas fa-bolt"></i> FlashOS v3.1</span>
+                <span>System: Stable</span>
+                <span>User: guest</span>
+            </div>
+            <div class="right">
+                <span id="live-clock">00:00:00</span>
+                <button class="return-btn" onclick="switchMode('terminal')">KILL GUI</button>
+            </div>
+        </div>
+
+        <main class="dashboard">
+            <div class="glass-window window-card" style="grid-column: 1 / -1;">
+                <div class="window-dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div>
+                <h2><i class="fas fa-user-astronaut" style="color: var(--highlight);"></i> Identity Dossier</h2>
+                <p>Alias: <strong>Robert Storm</strong>. I am a Full Stack Developer and IoT Architect. I specialize in bridging the gap between high-level software engineering (scalable web backends, AI workflows) and physical hardware integration (robotics, penetration testing devices). Powered by <strong>The27LINKS</strong>.</p>
+                <div class="chip-container">
+                    <span class="chip"><i class="fas fa-briefcase"></i> Available for Hire</span>
+                    <span class="chip"><i class="fas fa-graduation-cap"></i> B.Tech CSE (AI & ML)</span>
+                </div>
+            </div>
+
+            <div class="glass-window window-card">
+                <div class="window-dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div>
+                <h2><i class="fas fa-microchip" style="color: #9d00ff;"></i> Architecture</h2>
+                <p>Primary languages, frameworks, and hardware environments utilized in production.</p>
+                <div class="chip-container">
+                    <span class="chip">Python</span> <span class="chip">C/C++</span>
+                    <span class="chip">JavaScript</span> <span class="chip">SQL / DBMS</span>
+                    <span class="chip">Arduino/ESP32</span> <span class="chip">Kali Linux</span>
+                    <span class="chip">Prompt Eng</span> <span class="chip">Android SDK</span>
+                </div>
+            </div>
+
+            <div class="glass-window window-card" style="grid-column: span 2;">
+                <div class="window-dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div>
+                <h2><i class="fas fa-folder-open" style="color: #00e5ff;"></i> Secured Archives</h2>
+                <div class="project-item">
+                    <h4>DK2B Agent <i class="fas fa-brain"></i></h4>
+                    <p>AI-driven brand agent system to autonomously analyze project communications and compile Business Requirement Documents.</p>
+                </div>
+                <div class="project-item">
+                    <h4>ESP32 Pen-Test Device <i class="fas fa-satellite-dish"></i></h4>
+                    <p>Custom-built mini keypad running proprietary firmware with mobile-like telecommunication and network security capabilities.</p>
+                </div>
+                <div class="project-item">
+                    <h4>Linker Auth & Midnight <i class="fas fa-shield-alt"></i></h4>
+                    <p>A highly secure cross-platform authentication environment, and a dynamic social networking platform built from scratch.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const terminalOutput = document.getElementById('terminal-output');
+        const inputField = document.getElementById('cmd-input');
+        const terminalView = document.getElementById('terminal-view');
+        const guiView = document.getElementById('gui-view');
+        
+        let isProcessing = false;
+        let cmdHistory = [];
+        let historyIndex = -1;
+
+        const asciiLogo = `
+    ________    ___   _____ __  __   ____  _____
+   / ____/ /   /   | / ___// / / /  / __ \\/ ___/
+  / /_  / /   / /| | \\__ \\/ /_/ /  / / / /\\__ \\ 
+ / __/ / /___/ ___ |___/ / __  /  / /_/ /___/ / 
+/_/   /_____/_/  |_/____/_/ /_/   \\____//____/  
+
+System Kernel: The27LINKS Core v3.1
+Access Level : GUEST
+<br>`;
+
+        const fileSystem = {
+            'menu': `
+<div class="table-wrapper">
+<table class="data-table">
+    <tr><th>OPT</th><th>COMMAND</th><th>DESCRIPTION</th></tr>
+    <tr><td><span class="prompt">[1]</span></td><td>WHOAMI</td><td>Decrypt user identification dossier</td></tr>
+    <tr><td><span class="prompt">[2]</span></td><td>SKILLS</td><td>Run technical architecture diagnostic</td></tr>
+    <tr><td><span class="prompt">[3]</span></td><td>PROJECTS</td><td>Query secured development archives</td></tr>
+    <tr><td><span class="prompt">[4]</span></td><td>CONTACT</td><td>Establish secure comms handshake</td></tr>
+    <tr><td><span class="prompt">[5]</span></td><td>THEME</td><td>Switch UI color profiles</td></tr>
+    <tr><td><span class="prompt">[6]</span></td><td>GUI</td><td>Launch Desktop Environment</td></tr>
+    <tr><td><span class="prompt">[7]</span></td><td>CLEAR</td><td>Purge terminal output history</td></tr>
+</table>
+</div>
+<span class="system">Type the number of your selection and press Enter.</span>
+            `,
+            '1': `
+<div class="dossier-box">
+    <div class="dossier-header">[+] DECRYPTED IDENTITY DOSSIER</div>
+    <span class="system">ID NUM:</span> 9948-AX<br>
+    <span class="system">NAME  :</span> <span class="success">Sumit Kumar</span><br>
+    <span class="system">ALIAS :</span> Robert Storm<br>
+    <span class="system">CLASS :</span> Full Stack Developer / Hardware Engineer<br>
+    <span class="system">ORG   :</span> The27LINKS<br>
+    <br>
+    <span class="highlight">> MISSION OBJECTIVE:</span><br>
+    Developing scalable web backends, integrating AI workflows, 
+    and programming complex embedded penetration devices.
+</div>
+            `,
+            '2': `
+<div class="dossier-header">[+] RUNNING SYSTEM DIAGNOSTICS... OK.</div>
+<div class="skill-row"><div class="skill-name">Python/API</div><div class="bar-container"><div class="bar-fill" style="width: 95%;"></div></div><div class="skill-pct">95%</div></div>
+<div class="skill-row"><div class="skill-name">C / C++</div><div class="bar-container"><div class="bar-fill" style="width: 85%;"></div></div><div class="skill-pct">85%</div></div>
+<div class="skill-row"><div class="skill-name">JavaScript/Web</div><div class="bar-container"><div class="bar-fill" style="width: 90%;"></div></div><div class="skill-pct">90%</div></div>
+<div class="skill-row"><div class="skill-name">ESP32/Hardware</div><div class="bar-container"><div class="bar-fill" style="width: 90%;"></div></div><div class="skill-pct">90%</div></div>
+<div class="skill-row"><div class="skill-name">NetSec / Kali</div><div class="bar-container"><div class="bar-fill" style="width: 75%;"></div></div><div class="skill-pct">75%</div></div>
+<br>
+<span class="system">AUXILIARY:</span> <span class="tech-tag">Prompt Eng</span> <span class="tech-tag">Android</span> <span class="tech-tag">SQL</span>
+            `,
+            '3': `
+<div class="dossier-header">[+] QUERYING SECURE DATABASE: 4 RECORDS</div>
+<div class="table-wrapper">
+<table class="data-table">
+    <tr><th>ID</th><th>CODENAME</th><th>TYPE</th><th>TECHNOLOGIES</th></tr>
+    <tr><td>01</td><td><span class="success">DK2B Agent</span></td><td>AI Automation</td><td><span class="tech-tag">Python</span> <span class="tech-tag">API</span></td></tr>
+    <tr><td>02</td><td><span class="success">ESP32 Pen-Test</span></td><td>Custom Hardware</td><td><span class="tech-tag">C++</span> <span class="tech-tag">NetSec</span></td></tr>
+    <tr><td>03</td><td><span class="success">Linker Auth</span></td><td>Security Platform</td><td><span class="tech-tag">JS</span> <span class="tech-tag">Android</span></td></tr>
+    <tr><td>04</td><td><span class="success">Humanoid Bot</span></td><td>Kinematics</td><td><span class="tech-tag">Arduino Mega</span></td></tr>
+</table>
+</div>
+            `,
+            '4': `
+<div class="dossier-box" style="border-left-color: var(--text-main);">
+    <div class="dossier-header" style="color: var(--text-main);">[+] INITIATING SECURE HANDSHAKE... SUCCESS.</div>
+    <div class="table-wrapper">
+    <table style="width: 100%; min-width: 300px;">
+        <tr><td style="padding: 5px 0;"><i class="fab fa-github"></i> GITHUB</td><td><a href="https://github.com/Er-Sumit-Kumar" target="_blank" class="term-link">Er-Sumit-Kumar</a></td></tr>
+        <tr><td style="padding: 5px 0;"><i class="fab fa-linkedin"></i> LINKEDIN</td><td><a href="https://www.linkedin.com/in/sumit-kumar-664318232" target="_blank" class="term-link">Sumit Kumar</a></td></tr>
+        <tr><td style="padding: 5px 0;"><i class="fas fa-envelope"></i> EMAIL</td><td><a href="mailto:sumittkumarr1729@gmail.com" class="term-link">sumittkumarr1729@gmail.com</a></td></tr>
+    </table>
+    </div>
+</div>
+            `,
+            'theme': `
+<span class="system">Available color profiles:</span>
+  <span class="prompt">theme matrix</span>  - Default neon green
+  <span class="prompt">theme cyber</span>   - Electric blue and purple
+  <span class="prompt">theme blood</span>   - Deep red and orange
+  <span class="prompt">theme ghost</span>   - Monochrome grayscale
+<br>
+<span class="system">Usage: Type '5 [name]' or 'theme [name]'</span>
+            `
+        };
+
+        // Command Aliases
+        fileSystem['about'] = fileSystem['whoami'] = fileSystem['1'];
+        fileSystem['skills'] = fileSystem['2'];
+        fileSystem['projects'] = fileSystem['3'];
+        fileSystem['contact'] = fileSystem['4'];
+        fileSystem['5'] = fileSystem['theme'];
+        fileSystem['help'] = fileSystem['menu'];
+
+        const themes = {
+            'matrix': { text: '#00ff41', dim: '#008f11', high: '#00e5ff', warn: '#ff003c' },
+            'cyber': { text: '#00e5ff', dim: '#0077b5', high: '#bc13fe', warn: '#ff003c' },
+            'blood': { text: '#ff3333', dim: '#8a001a', high: '#ff8800', warn: '#ffffff' },
+            'ghost': { text: '#ffffff', dim: '#777777', high: '#cccccc', warn: '#ff0000' }
+        };
+
+        function applyTheme(themeName) {
+            if(themes[themeName]) {
+                const root = document.documentElement;
+                root.style.setProperty('--text-main', themes[themeName].text);
+                root.style.setProperty('--text-dim', themes[themeName].dim);
+                root.style.setProperty('--highlight', themes[themeName].high);
+                root.style.setProperty('--warning', themes[themeName].warn);
+                return true;
+            }
+            return false;
+        }
+
+        function writeToTerminal(text, isCommand = false) {
+            const div = document.createElement('div');
+            div.className = 'line';
+            if (isCommand) { div.innerHTML = `<span class="prompt">guest@flashOS:~$</span> <span class="user-input">${text}</span>`; } 
+            else { div.innerHTML = text; }
+            terminalOutput.appendChild(div);
+            scrollToBottom();
+        }
+
+        function scrollToBottom() { setTimeout(() => { terminalOutput.scrollTop = terminalOutput.scrollHeight; }, 10); }
+        function drawLogo() { const div = document.createElement('div'); div.innerHTML = `<span class="ascii-art">${asciiLogo}</span>`; terminalOutput.appendChild(div); }
+
+        setInterval(() => {
+            const now = new Date();
+            document.getElementById('live-clock').innerText = now.toLocaleTimeString('en-US', { hour12: false });
+        }, 1000);
+
+        const bootSequence = [
+            "Initializing X11 Display Server...",
+            "Loading graphical drivers [OK]",
+            "Mounting /dev/nvme0n1p2... [OK]",
+            "Fetching FlashOS assets...",
+            "Unpacking window manager [||||||||||] 100%",
+            "Starting desktop environment...",
+            "Handing over control to GUI..."
+        ];
+
+        async function switchMode(mode) {
+            if (mode === 'gui') {
+                isProcessing = true; inputField.disabled = true;
+                
+                for(let line of bootSequence) {
+                    writeToTerminal(`<span class="pkg-load">${line}</span>`);
+                    await new Promise(r => setTimeout(r, Math.random() * 200 + 100)); 
+                }
+                
+                document.body.style.backgroundColor = 'var(--gui-bg)';
+                terminalView.style.opacity = '0';
+                
+                setTimeout(() => {
+                    terminalView.style.display = 'none';
+                    guiView.style.display = 'block';
+                    setTimeout(() => guiView.style.opacity = '1', 50);
+                    
+                    const windows = document.querySelectorAll('.window-card');
+                    windows.forEach((win, index) => {
+                        win.style.animationDelay = `${index * 0.15}s`;
+                        win.classList.add('animate-in');
+                    });
+                }, 500);
+            } else {
+                guiView.style.opacity = '0';
+                document.body.style.backgroundColor = '#050505';
+                
+                setTimeout(() => {
+                    guiView.style.display = 'none';
+                    terminalView.style.display = 'flex';
+                    setTimeout(() => terminalView.style.opacity = '1', 50);
+                    
+                    document.querySelectorAll('.window-card').forEach(win => win.classList.remove('animate-in'));
+                    
+                    terminalOutput.innerHTML = '';
+                    drawLogo();
+                    writeToTerminal(fileSystem['menu']);
+                    writeToTerminal(`<span class="system">GUI session terminated. Returned to CLI.</span>`);
+                    
+                    isProcessing = false; inputField.disabled = false; inputField.focus(); scrollToBottom();
+                }, 500);
+            }
+        }
+
+        async function processCommand(cmdStr) {
+            if (isProcessing) return;
+            const fullCmd = cmdStr.trim();
+            const cmdParts = fullCmd.toLowerCase().split(' ');
+            const cmd = cmdParts[0];
+            const arg = cmdParts[1];
+            
+            if (fullCmd === '') return writeToTerminal('', true);
+            
+            if (cmdHistory[cmdHistory.length - 1] !== fullCmd) cmdHistory.push(fullCmd);
+            historyIndex = cmdHistory.length;
+            
+            isProcessing = true; inputField.disabled = true;
+            writeToTerminal(fullCmd, true);
+
+            if (cmd === '7' || cmd === 'clear') {
+                terminalOutput.innerHTML = '';
+                drawLogo();
+                writeToTerminal(fileSystem['menu']);
+            } else if (cmd === '6' || cmd === 'gui') {
+                switchMode('gui');
+                return;
+            } else if (cmd === '5' || cmd === 'theme') {
+                if(arg && applyTheme(arg)) {
+                    writeToTerminal(`<span class="success">System theme updated to: ${arg.toUpperCase()}</span>`);
+                } else if (arg) {
+                    writeToTerminal(`<span class="error">Theme '${arg}' not found.</span>`);
+                } else {
+                    writeToTerminal(fileSystem['theme']);
+                }
+            } else if (cmd === 'sudo') {
+                await simulateDelay("[!] INITIATING ROOT ESCALATION...");
+                writeToTerminal(`<br><span class="error">ERROR 403: ACCESS DENIED. INCIDENT LOGGED.</span><br>`);
+            } else if (fileSystem[cmd]) {
+                await simulateDelay(`[*] Executing protocol: ${cmd}...`);
+                writeToTerminal(fileSystem[cmd]);
+            } else {
+                writeToTerminal(`<span class="system">flashOS: command not found: ${cmd}. Type 'help' for menu.</span>`);
+            }
+            
+            isProcessing = false; inputField.disabled = false; inputField.value = ''; inputField.focus(); scrollToBottom();
+        }
+
+        function simulateDelay(loadingText) {
+            return new Promise(resolve => {
+                const div = document.createElement('div'); div.className = 'line system'; terminalOutput.appendChild(div);
+                let dots = 0;
+                const interval = setInterval(() => {
+                    div.innerHTML = `${loadingText} [${'|'.repeat(dots)}${' '.repeat(5-dots)}]`;
+                    dots++; scrollToBottom();
+                    if (dots > 5) { clearInterval(interval); div.remove(); resolve(); }
+                }, 60);
+            });
+        }
+
+        window.executeCommand = function(cmd) { if (!isProcessing) { if(cmd==='gui'){ switchMode('gui'); } else { processCommand(cmd); } } }
+
+        inputField.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') { processCommand(this.value); } 
+            else if (e.key === 'ArrowUp') { e.preventDefault(); if (historyIndex > 0) { historyIndex--; this.value = cmdHistory[historyIndex]; } } 
+            else if (e.key === 'ArrowDown') { e.preventDefault(); if (historyIndex < cmdHistory.length - 1) { historyIndex++; this.value = cmdHistory[historyIndex]; } else { historyIndex = cmdHistory.length; this.value = ''; } }
+        });
+
+        document.addEventListener('click', (e) => { if (!isProcessing && window.getSelection().toString() === '' && terminalView.style.display !== 'none') inputField.focus(); });
+
+        setTimeout(() => { 
+            drawLogo(); 
+            writeToTerminal(fileSystem['menu']); 
+            scrollToBottom(); 
+        }, 300);
+
+    </script>
+</body>
+</html>
