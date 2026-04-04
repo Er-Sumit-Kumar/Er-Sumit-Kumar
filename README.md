@@ -47,7 +47,6 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" width="60" title="Git" alt="Git" /> &ensp;
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/android/android-original.svg" width="60" title="Android" alt="Android" /> &ensp;
   <img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Kali-dragon-icon.svg" width="60" title="Kali Linux" alt="Kali Linux" /> &ensp;
-  <img src="https://cdn.simpleicons.org/canva/00C4CC" width="60" title="Canva" alt="Canva" />
   <br>
 </div>
 
