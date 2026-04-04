@@ -72,7 +72,7 @@
 
 <p align="center">
   <a href="https://www.linkedin.com/in/sumit-kumar-664318232?utm_source=share_via&utm_content=profile" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" width="32" />
   </a>
   <a href="https://x.com/The27links" target="_blank">
     <img src="https://img.shields.io/badge/X_%28Twitter%29-000000?style=for-the-badge&logo=x&logoColor=white" alt="X/Twitter" />
