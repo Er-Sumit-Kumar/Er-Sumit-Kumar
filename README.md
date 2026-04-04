@@ -80,6 +80,9 @@
   <a href="mailto:sumittkumarr1729@gmail.com" target="_blank">
     <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
   </a>
+    <a href="https://the27links.in" target="_blank">
+    <img src="https://raw.githubusercontent.com/The27LINKS/Data/refs/heads/main/Images/PNG/the27links.png" alt="The27LINKS" />
+  </a>
 </p>
 
 <p align="center">
