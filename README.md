@@ -18,14 +18,14 @@
 - <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Graduation%20Cap.png" alt="Graduation Cap" width="20" /> **B.Tech CSE (AI & ML) student actively seeking full-time Software Engineering roles or internships.**
 - <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Laptop.png" alt="Laptop" width="20" /> **Full Stack Developer** managing and hosting multiple live platforms, including hands-on experience with server management.
 - <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/High%20Voltage.png" alt="High Voltage" width="20" /> **Current Focus:** Developing scalable backends, integrating AI workflows, and building clean interfaces.
-- <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Direct%20Hit.png" alt="Direct Hit" width="20" /> **Personal Initiative:** Building impactful tech, hardware, and web solutions under my company, **The27LINKS**.
+- <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Light%20Bulb.png" alt="Initiative" width="20" /> **Personal Initiative:** Building impactful tech, hardware, and web solutions under my company, **The27LINKS**.
 
 ---
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Bar%20Chart.png" alt="Chart" width="30" /> GitHub Stats & Activity
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Chart%20Increasing.png" alt="Chart" width="30" /> GitHub Stats & Activity
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Er-Sumit-Kumar&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117" height="150" alt="Stats"/>
+  <img src="https://github-readme-stats.vercel.app/api?username=Er-Sumit-Kumar&show_icons=true&theme=tokyonight&hide_border=true&v=1" height="150" alt="Stats"/>
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=Er-Sumit-Kumar&theme=tokyonight&hide_border=true&background=0D1117" height="150" alt="Streak"/>
 </div>
 
