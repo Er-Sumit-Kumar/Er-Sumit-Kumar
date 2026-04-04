@@ -25,8 +25,7 @@
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Chart%20Increasing.png" alt="Chart" width="30" /> GitHub Stats & Activity
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Er-Sumit-Kumar&show_icons=true&theme=tokyonight&hide_border=true&v=1" height="150" alt="Stats"/>
-  <img src="https://github-readme-streak-stats.herokuapp.com/?username=Er-Sumit-Kumar&theme=tokyonight&hide_border=true&background=0D1117" height="150" alt="Streak"/>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Er-Sumit-Kumar&theme=tokyonight&hide_border=true&background=0D1117" height="150" alt="Streak"/>
 </div>
 
 ---
@@ -48,7 +47,7 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" width="60" title="Git" alt="Git" /> &ensp;
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/android/android-original.svg" width="60" title="Android" alt="Android" /> &ensp;
   <img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Kali-dragon-icon.svg" width="60" title="Kali Linux" alt="Kali Linux" /> &ensp;
-  <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Canva_icon_2021.svg" width="60" title="Canva" alt="Canva" />
+  <img src="https://cdn.simpleicons.org/canva/00C4CC" width="60" title="Canva" alt="Canva" />
   <br>
 </div>
 
