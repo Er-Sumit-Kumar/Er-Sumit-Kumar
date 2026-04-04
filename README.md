@@ -1,9 +1,11 @@
-<h1 align="center">
-  Hi <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Waving%20Hand.png" alt="Waving Hand" width="35" />, I'm Sumit Kumar (Robert Storm)
-</h1>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0077B5&height=200&section=header&text=Hi,%20I'm%20Sumit%20Kumar!&fontSize=50&animation=fadeIn&fontAlignY=38&desc=Robert%20Storm%20%7C%20Full%20Stack%20Developer&descAlignY=55&descAlign=50" width="100%"/>
 
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Segoe+UI&weight=600&size=22&pause=1000&color=0077B5&center=true&vCenter=true&width=500&lines=Full+Stack+Developer;B.Tech+CSE+(AI+%26+ML)+Student;IoT+%26+Hardware+Enthusiast;Building+The27LINKS" alt="Typing Animation" />
+</p>
+
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=Er-Sumit-Kumar&label=Profile%20Views&color=0077B5&style=for-the-badge" alt="Profile Views" />
 </p>
 
 <p align="center">
@@ -14,61 +16,60 @@
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/People/Man%20Technologist.png" alt="Technologist" width="30" /> About Me
 - <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Graduation%20Cap.png" alt="Graduation Cap" width="20" /> **B.Tech CSE (AI & ML) student actively seeking full-time Software Engineering roles or internships.**
-- <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Laptop.png" alt="Laptop" width="20" /> **Full Stack Developer** managing and hosting multiple live platforms, including hands-on experience with server management (e.g., Raspberry Pi hosting).
-- <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/High%20Voltage.png" alt="High Voltage" width="20" /> **Current Focus:** Developing scalable backends, integrating AI workflows, and building clean, user-centric interfaces.
-- <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Direct%20Hit.png" alt="Direct Hit" width="20" /> **Personal Initiative:** Building impactful tech, hardware, and web solutions under my open-source and project umbrella, **The27LINKS**.
+- <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Laptop.png" alt="Laptop" width="20" /> **Full Stack Developer** managing and hosting multiple live platforms, including hands-on experience with server management.
+- <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/High%20Voltage.png" alt="High Voltage" width="20" /> **Current Focus:** Developing scalable backends, integrating AI workflows, and building clean interfaces.
+- <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Direct%20Hit.png" alt="Direct Hit" width="20" /> **Personal Initiative:** Building impactful tech, hardware, and web solutions under my company, **The27LINKS**.
+
+---
+
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Bar%20Chart.png" alt="Chart" width="30" /> GitHub Stats & Activity
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=Er-Sumit-Kumar&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117" height="150" alt="Stats"/>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Er-Sumit-Kumar&theme=tokyonight&hide_border=true&background=0D1117" height="150" alt="Streak"/>
+</div>
 
 ---
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Toolbox.png" alt="Toolbox" width="30" /> Skills & Technologies
 
-### 💻 Languages & Core
+<div align="center">
+
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)](https://isocpp.org/)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white)](https://en.wikipedia.org/wiki/SQL)
-
-### 🌐 Full Stack Web & Databases
+<br>
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![MySQL](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
-
-### 🧰 Tools, Platforms & Extras
+<br>
 [![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)](https://git-scm.com/)
 [![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://developer.android.com/)
 [![Kali Linux](https://img.shields.io/badge/Kali_Linux-557C94?style=for-the-badge&logo=kali-linux&logoColor=white)](https://www.kali.org/)
 [![Canva](https://img.shields.io/badge/Canva-00C4CC?style=for-the-badge&logo=canva&logoColor=white)](https://www.canva.com/)
 
-* **Other Expertise:** UI/UX Design, Social Media Marketing, Prompt Engineering (GPT, Gemini), Penetration Testing (Intermediate).
+</div>
 
 ---
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Rocket.png" alt="Rocket" width="30" /> Featured Projects
 
 ### 🔹 Software & Web Development
-- <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png" alt="Robot" width="20" /> **DK2B (AI Brand Agent)** – An AI-driven brand agent system for analyzing project communications and generating Business Requirement Documents (BRDs).
-  - *Tech Stack:* `Python`, `Prompt Engineering`, `API Integration`
-  - 🔗 [Repository](#) | [Live Demo](#)
+- <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png" alt="Robot" width="20" /> **DK2B (AI Brand Agent)** – An AI-driven brand agent system for generating Business Requirement Documents.
+  - *Tech:* `Python`, `Prompt Engineering`, `API Integration`
 
-- <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Locked%20with%20Key.png" alt="Lock" width="20" /> **Linker (Auth System)** – Cross-platform web & Android authentication system (similar to Google Authenticator), powered by The27LINKS.
-  - *Tech Stack:* `JavaScript`, `Android`, `SQL`
-  - 🔗 [Repository](#) | [Live App](#)
+- <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Locked%20with%20Key.png" alt="Lock" width="20" /> **Linker (Auth System)** – Cross-platform authentication system (similar to Google Authenticator).
+  - *Tech:* `JavaScript`, `Android`, `SQL`
 
 - <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Crescent%20Moon.png" alt="Moon" width="20" /> **Midnight** – A dynamic, responsive social media platform.
-  - *Tech Stack:* `HTML5`, `CSS3`, `JavaScript`
-  - 🔗 [Repository](#) | [Live Demo](#)
+  - *Tech:* `HTML5`, `CSS3`, `JavaScript`
 
 ### 🔹 Hardware, IoT & Cybersecurity
 - <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png" alt="Robot" width="20" /> **Mini Humanoid Robot** – Built using Arduino Mega, HC-06, and servo motors.
-  - *Tech Stack:* `C++`, `Arduino`, `Hardware Integration`
-  - 🔗 [Documentation (Google Drive)](#)
-
-- <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Keyboard.png" alt="Keyboard" width="20" /> **ESP32 Custom Device** – A mini keypad penetration testing device running custom firmware/OS with mobile-like functionality (e.g., calling).
-  - *Tech Stack:* `C/C++`, `Custom Firmware`, `Network Tools`
-  - 🔗 [Repository](#)
-
-- <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/High%20Voltage.png" alt="High Voltage" width="20" /> **Experimental IoT** – Bridging the gap between physical hardware and web integration, including hosting live URLs directly from embedded hardware.
+- <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Keyboard.png" alt="Keyboard" width="20" /> **ESP32 Custom Device** – A mini keypad penetration testing device running custom firmware/OS.
+- <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/High%20Voltage.png" alt="High Voltage" width="20" /> **Experimental IoT** – Bridging physical hardware and web integration with direct embedded hosting.
 
 ---
 
@@ -82,6 +83,4 @@
   <a href="https://the27links.in" target="_blank"><img src="https://raw.githubusercontent.com/The27LINKS/Data/refs/heads/main/Images/PNG/the27links.png" alt="The27LINKS" width="32" /></a>
 </p>
 
-<p align="center">
-  <i>Building the future with <b>The27LINKS</b></i>
-</p>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0077B5&height=100&section=footer" width="100%"/>
