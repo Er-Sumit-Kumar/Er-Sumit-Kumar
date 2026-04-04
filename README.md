@@ -1,4 +1,4 @@
-<h1 align="center">Hi 👋, I'm Sumit Kumar (aka Robert Storm)</h1>
+<h1 align="center">Hi 👋, I'm Sumit Kumar ( Robert Storm)</h1>
 
 <h3 align="center">🚀 "Love Your Passion" | Full Stack Developer | B.Tech CSE (AI & ML)</h3>
 
@@ -77,7 +77,7 @@
   <a href="YOUR_X_TWITTER_URL" target="_blank">
     <img src="https://img.shields.io/badge/X_%28Twitter%29-000000?style=for-the-badge&logo=x&logoColor=white" alt="X/Twitter" />
   </a>
-  <a href="mailto:your.email@example.com" target="_blank">
+  <a href="mailto:sumittkumarr1729@gmail.com" target="_blank">
     <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
   </a>
 </p>
