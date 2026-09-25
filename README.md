@@ -76,8 +76,8 @@
 <p align="center">
   <a href="https://www.linkedin.com/in/sumit-kumar-664318232?utm_source=share_via&utm_content=profile" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" width="32" /></a> &ensp;
   <a href="https://x.com/The27links" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original" alt="X/Twitter" width="32" /></a> &ensp;
-  <a href="https://www.instagram.com/iamthesumitkumar/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/600px-Instagram_logo_2016.svg.png" alt="Instagram" width="32" /></a> &ensp;
-  <a href="mailto:sumittkumarr1729@gmail.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/600px-Gmail_icon_%282020%29.svg.png" alt="Email" width="32" /></a> &ensp;
+  <a href="https://www.instagram.com/iamthesumitkumar/" target="_blank"><img src="[https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/600px-Instagram_logo_2016.svg.png](https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original)" alt="Instagram" width="32" /></a> &ensp;
+  <a href="mailto:sumittkumarr1729@gmail.com" target="_blank"><img src="[https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/600px-Gmail_icon_%282020%29.svg.png](https://upload.wikimedia.org/wikipedia/commons/c/ce/Android_Email_8.1_Icon.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original)" alt="Email" width="32" /></a> &ensp;
   <a href="https://the27links.in" target="_blank"><img src="https://raw.githubusercontent.com/The27LINKS/Data/refs/heads/main/Images/PNG/the27links.png" alt="The27LINKS" width="32" /></a>
 </p>
 
